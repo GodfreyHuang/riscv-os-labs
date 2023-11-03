@@ -1,3 +1,5 @@
+# Reference: https://matrix89.github.io/writes/writes/experiments-in-riscv/
+
 .equ STACK_SIZE, 1024
 
 .global _start

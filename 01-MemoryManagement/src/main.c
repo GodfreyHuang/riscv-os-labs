@@ -1,6 +1,6 @@
-//Reference: https://github.com/cccriscv/mini-riscv-os/blob/master/01-HelloOs/os.c
+// Reference: https://github.com/cccriscv/mini-riscv-os/blob/master/01-HelloOs/os.c
 
-#include "mem.h"
+#include "riscv.h"
 
 int putc(char ch)
 {
@@ -15,7 +15,7 @@ void puts(char *s)
         putc(*s++);
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
     puts("Init riscv os!\n");
     while (1) {

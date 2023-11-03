@@ -11,6 +11,7 @@ CHECKDIR := $(shell if ! $(DIR); \
 
 OBJ = \
 $(SOURCE)boot.s \
+$(SOURCE)heap.s \
 $(SOURCE)main.c 
 
 QEMU = qemu-system-riscv32
