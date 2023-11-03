@@ -46,5 +46,5 @@ clean:
 debug: clean os.elf hdd.dsk
 	@echo "Press Ctrl-C and then input 'quit' to exit GDB and QEMU"
 	@echo "-------------------------------------------------------"
-	@${QEMU} ${QFLAGS} -kernel os.elf -s -S &
-	@${GDB} os.elf -q -x ./gdbinit
+	@${QEMU} ${QFLAGS} -kernel $(DIR)os.elf -s -S &
+	@${GDB} $(DIR)os.elf -q -x ./gdbinit
