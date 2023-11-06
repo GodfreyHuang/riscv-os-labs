@@ -5,6 +5,7 @@ SOURCE = src/
 
 FILES = \
 $(SOURCE)boot.s \
+$(SOURCE)os_api.c \
 $(SOURCE)main.c
 
 OUT = os.elf
