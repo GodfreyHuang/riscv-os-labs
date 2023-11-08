@@ -6,22 +6,22 @@ Make sure the device is already installed riscv library and qemu. To get riscv l
 
 Add the appropriate directory to $PATH is required, You will need to update your shell's rc file (e.g. ~/.bashrc) :  
 ```
-#Using Linux:
+# Using Linux:
 $ vim ~/.bashrc
 $ export PATH=$PATH:/opt/riscv/bin  
 
-#Using MacOS:
+# Using MacOS:
 $ PATH=$PATH:/usr/local/opt/riscv-gnu-toolchain/bin
 ```
 
 To install qemu, please using the instruction below:  
 ```
-#Using Ubuntu:
+# Using Ubuntu:
 $ sudo apt-get install 
 
-#Using Fedora:
+# Using Fedora:
 $ sudo dnf install qemu
 
-#Using MacOS (with homebrew):
+# Using MacOS (with homebrew):
 $ brew install qemu
 ```
