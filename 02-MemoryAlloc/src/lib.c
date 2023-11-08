@@ -20,7 +20,7 @@ int os_vsnprintf(char *out, size_t n, const char *s, va_list vl)
     int format = 0;
     int longarg = 0;
     size_t pos = 0;
-    for (; *s; ++s)
+    for (; *s; s++)
     {
         if (format)
         {
@@ -49,7 +49,7 @@ int os_vsnprintf(char *out, size_t n, const char *s, va_list vl)
             {
                 long num = longarg ? va_arg(vl, long) : va_arg(vl, int);
                 int hexdigits = 2 * (longarg ? sizeof(long) : sizeof(int)) - 1;
-                for (int i = hexdigits; i >= 0; --i)
+                for (int i = hexdigits; i >= 0; i--)
                 {
                     int d = (num >> (4 * i)) & 0xF;
                     if (out && pos < n)

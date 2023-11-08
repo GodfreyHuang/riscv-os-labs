@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
     uart_init();
     page_init();
-    mem_test();
+    page_test();
 
     while (1) {
     }
