@@ -11,9 +11,9 @@ CHECKDIR := $(shell if ! $(DIR); \
 
 OBJ = \
 $(SOURCE)boot.s \
-$(SOURCE)heap.s \
+$(SOURCE)mem.s \
 $(SOURCE)lib.c \
-$(SOURCE)mem_alloc.c \
+$(SOURCE)alloc.c \
 $(SOURCE)main.c 
 
 QEMU = qemu-system-riscv32

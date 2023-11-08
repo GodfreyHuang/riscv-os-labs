@@ -1,11 +1,7 @@
-// Reference: https://github.com/cccriscv/mini-riscv-os/blob/master/01-HelloOs/os.c
+// Reference:
+// https://github.com/cccriscv/mini-riscv-os/blob/master/01-HelloOs/os.c
 
 #include "os.h"
-#include "riscv.h"
-
-//uart
-#define LSR_RX_READY (1 << 0)
-#define EOF 0
 
 void uart_init()
 {
@@ -27,10 +23,9 @@ void uart_init()
 
 int main(int argc, char *argv[])
 {
-    os_puts("Init riscv os!\n");
-
     uart_init();
     page_init();
+    os_puts("Init riscv os!\n");
     page_test();
 
     while (1) {

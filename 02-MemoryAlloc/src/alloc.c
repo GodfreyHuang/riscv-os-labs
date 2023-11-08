@@ -87,7 +87,7 @@ void page_init()
 {
     _num_pages = (HEAP_SIZE / PAGE_SIZE) - 2048;
     os_printf("HEAP_START = %x, HEAP_SIZE = %x, num of pages = %d\n",
-              HEAP_START, HEAP_SIZE, _num_pages);
+               HEAP_START, HEAP_SIZE, _num_pages);
 
     struct Page *page = (struct Page *) HEAP_START;
     for (int i = 0; i < _num_pages; i++) {
@@ -150,6 +150,7 @@ void *malloc(size_t size)
         }
         page_i++;
     }
+    return NULL;
 }
 
 /*
@@ -182,16 +183,8 @@ void free(void *p)
 
 void page_test()
 {
-    void *p = malloc(1024);
-    os_printf("p = 0x%x\n", p);
+    void *test = malloc(sizeof(int));
+    os_printf("p3 = 0x%x\n", test);
 
-    void *p2 = malloc(512);
-    os_printf("p2 = 0x%x\n", p2);
-
-    void *p3 = malloc(sizeof(int));
-    os_printf("p3 = 0x%x\n", p3);
-
-    free(p);
-    free(p2);
-    free(p3);
+    free(test);
 }

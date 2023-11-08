@@ -1,12 +1,18 @@
 #ifndef __OS_H__
 #define __OS_H__
 
-#include "riscv.h"
 #include "lib.h"
-//define the kernel functions
+#include "riscv.h"
+// define the kernel functions
 
-//memory allocator
+// memory allocator
 extern void *malloc(size_t size);
 extern void free(void *p);
+extern void page_init();
+extern void page_test();
+
+// main function
+extern void uart_init();
+extern int main(int argc, char *argv[]);
 
 #endif

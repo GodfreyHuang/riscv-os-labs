@@ -2,16 +2,18 @@
 #define __LIB_H__
 
 #include "riscv.h"
-#include <stddef.h>
 #include <stdarg.h>
+#include <stddef.h>
 
-//string functions 
-int os_putc(char ch);
-void os_puts(char *s);
+//string functions
+extern char *os_gets(char *);
+extern int os_getc(void);
+extern int os_putc(char ch);
+extern void os_puts(char *s);
 
-//print functions
-int os_printf(const char *s, ...);
-int os_vprintf(const char *s, va_list vl);
-int os_vsnprintf(char *out, size_t n, const char *s, va_list vl);
+//printf functions
+extern int os_printf(const char *s, ...);
+extern int os_vprintf(const char *s, va_list vl);
+extern int os_vsnprintf(char *out, size_t n, const char *s, va_list vl);
 
 #endif
