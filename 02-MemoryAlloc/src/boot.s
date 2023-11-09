@@ -26,3 +26,4 @@ park:
 
 stacks:
     .skip STACK_SIZE * 4            # allocate 1024 * 4 space for the harts stacks
+    

@@ -5,7 +5,7 @@ SOURCE = src/
 
 FILES = \
 $(SOURCE)boot.s \
-$(SOURCE)os_api.c \
+$(SOURCE)lib.c \
 $(SOURCE)swtch.s \
 $(SOURCE)main.c
 

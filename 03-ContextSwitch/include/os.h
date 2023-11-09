@@ -2,14 +2,12 @@
 #define __OS_H__
 
 #include "riscv.h"
+#include "lib.h"
 
-// print char in console
-int os_putc(char ch);
-// print string in console
-void os_puts(char *s);
+//context switch
+extern void sys_switch();
 
-char os_getc();
-
-int os_gets(char *s);
+//user task
+extern void user_task();
 
 #endif

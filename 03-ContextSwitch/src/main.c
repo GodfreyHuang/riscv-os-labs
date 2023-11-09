@@ -3,21 +3,25 @@
 #include "riscv.h"
 #include "os.h"
 
+uint8_t task0_stack[STACK_SIZE];
+struct context ctx_os;
+struct context ctx_task;
+
+void user_task()
+{
+    os_puts("Task0: Context Switch Success!\n");
+    while(1) {}
+}
+
 int main(int argc, char *argv[])
 {
-    os_puts("Init riscv os!\n");
-    /*
-    os_puts("type something: ");
-    char str[100];
-    os_gets(str);
-    os_puts("\r\necho: ");
-    os_puts(str);
-    os_puts("\r\n");    
-    */
-    while (1) 
-    {
+    os_puts("riscv os operate!\n");
 
-    }
+    ctx_task.ra = (reg_t) user_task;
+    ctx_task.sp = (reg_t) &task0_stack[STACK_SIZE - 1];
+    sys_switch(&ctx_os, &ctx_task);
+
+    while (1) {}
     
     return 0;
 }

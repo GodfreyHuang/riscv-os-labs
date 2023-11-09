@@ -1,3 +1,5 @@
+# Reference: https://matrix89.github.io/writes/writes/experiments-in-riscv/
+
 .equ STACK_SIZE, 1024
 
 .global _start
@@ -24,3 +26,4 @@ park:
 
 stacks:
     .skip STACK_SIZE * 4            # allocate 1024 * 4 space for the harts stacks
+    

@@ -1,5 +1,6 @@
-#include "os.h"
+#include "lib.h"
 
+//string output
 int os_putc(char ch)
 {
     while ((*UART_LSR & UART_LSR_EMPTY_MASK) == 0)
@@ -13,6 +14,7 @@ void os_puts(char *s)
         os_putc(*s++);
 }
 
+//string input
 char os_getc()
 {
     while ((*UART_LSR & UART_LSR_RX_READY) == 0)
