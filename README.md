@@ -25,3 +25,6 @@ $ sudo dnf install qemu
 # Using MacOS (with homebrew):
 $ brew install qemu
 ```
+
+## Reference  
+https://github.com/cccriscv/mini-riscv-os  
