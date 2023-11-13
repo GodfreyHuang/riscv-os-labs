@@ -3,9 +3,11 @@
 #include "riscv.h"
 #include "os.h"
 
-uint8_t task0_stack[STACK_SIZE];
-struct context ctx_os;
-struct context ctx_task;
+//uint8_t task0_stack[STACK_SIZE];
+//struct context ctx_os;
+//struct context ctx_task;
+
+struct task_handler test;
 
 void user_task0()
 {
@@ -23,9 +25,11 @@ int main(int argc, char *argv[])
     // th->ctx_task.sp = (reg_t) &(th->task0_stack[STACK_SIZE - 1]);
     // sys_switch(&(th->ctx_os), &(th->ctx_task));
 
-    ctx_task.ra = (reg_t) user_task0;
-    ctx_task.sp = (reg_t) &task0_stack[STACK_SIZE - 1];
-    sys_switch(&ctx_os, &ctx_task);
+    //struct task_handler test;
+
+    test.ctx_task.ra = (reg_t) user_task0;
+    test.ctx_task.sp = (reg_t) &(test.task0_stack[STACK_SIZE - 1]);
+    sys_switch(&(test.ctx_os), &(test.ctx_task));
 
     while (1) {}
     
