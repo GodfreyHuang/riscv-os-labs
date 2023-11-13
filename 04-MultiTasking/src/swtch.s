@@ -1,12 +1,6 @@
 # This Code derived from xv6-riscv (64bit)
 # -- https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/swtch.S
 
-# Context switch
-#
-#   void sys_switch(struct context *old, struct context *new);
-# 
-# Save current registers in old. Load from new.
-
 # ============ MACRO ==================
 .macro ctx_save base
         sw ra, 0(\base)
@@ -43,6 +37,12 @@
 .endm
 
 # ============ Macro END   ==================
+ 
+# Context switch
+#
+#   void sys_switch(struct context *old, struct context *new);
+# 
+# Save current registers in old. Load from new.
 
 .globl sys_switch
 .align 4
@@ -50,4 +50,3 @@ sys_switch:
         ctx_save a0  # a0 => struct context *old
         ctx_load a1  # a1 => struct context *new
         ret          # pc=ra; swtch to new task (new->ra)
-        

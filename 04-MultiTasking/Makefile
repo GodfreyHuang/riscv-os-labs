@@ -7,6 +7,8 @@ FILES = \
 $(SOURCE)boot.s \
 $(SOURCE)lib.c \
 $(SOURCE)swtch.s \
+$(SOURCE)task.c \
+$(SOURCE)user.c \
 $(SOURCE)main.c
 
 OUT = os.elf

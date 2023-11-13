@@ -3,25 +3,28 @@
 #include "riscv.h"
 #include "os.h"
 
-uint8_t task0_stack[STACK_SIZE];
-struct context ctx_os;
-struct context ctx_task;
-
-void user_task0()
+void os_kernel() 
 {
-    os_puts("Task0: Context Switch Success!\n");
-    while(1) {}
+	task_os();
+}
+
+void os_start() 
+{
+	os_puts("OS activated\n");
+	user_init();
 }
 
 int main(int argc, char *argv[])
 {
-    os_puts("riscv os operate!\n");
-
-    // ctx_task.ra = (reg_t) user_task0;
-    // ctx_task.sp = (reg_t) &task0_stack[STACK_SIZE - 1];
-    // sys_switch(&ctx_os, &ctx_task);
-
-    while (1) {}
-    
-    return 0;
+	os_start();
+	
+	int current_task = 0;
+	while (1) {
+		os_puts("OS: Activate next task\n");
+		task_go(current_task);
+		os_puts("OS: Back to OS\n");
+		current_task = (current_task + 1) % taskTop; // Round Robin Scheduling
+		os_puts("\n");
+	}
+	return 0;
 }

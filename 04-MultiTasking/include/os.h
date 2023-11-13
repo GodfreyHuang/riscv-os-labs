@@ -3,11 +3,12 @@
 
 #include "riscv.h"
 #include "lib.h"
+#include "task.h"
 
-//context switch
-extern void sys_switch();
+extern void os_kernel();
+extern void os_start();
+extern int main(int argc, char *argv[]);
 
-//user task
-extern void user_task();
+extern void user_init();
 
 #endif

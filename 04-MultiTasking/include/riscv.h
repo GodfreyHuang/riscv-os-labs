@@ -2,7 +2,6 @@
 #define __RISCV_H__
 
 #include <stdint.h>
-#include <stdlib.h>
 
 #define reg_t uint32_t // RISCV32: register is 32bits
 // define reg_t as uint64_t // RISCV64: register is 64bits
@@ -35,14 +34,5 @@ struct context {
     reg_t s10;
     reg_t s11;
 };
-
-struct task_handler
-{
-    uint8_t task0_stack[STACK_SIZE];
-    struct context ctx_os;
-    struct context ctx_task;
-};
-typedef struct task_handler th;
-typedef struct task_handler* thP;
 
 #endif

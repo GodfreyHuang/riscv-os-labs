@@ -36,3 +36,11 @@ int os_gets(char *s)
 	*p = '\0';
 	return p-s;
 }
+
+//delay
+void os_delay(volatile int num)
+{
+    num *= 50000;
+    while(num--)
+        ;
+}
