@@ -4,6 +4,9 @@
         "riscv.h": "c",
         "stdint.h": "c",
         "os_api.h": "c",
-        "os.h": "c"
+        "os.h": "c",
+        "task.h": "c",
+        "atomic": "c",
+        "bitset": "c"
     }
 }
