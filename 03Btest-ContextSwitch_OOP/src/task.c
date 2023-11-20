@@ -1,10 +1,10 @@
 #include "task.h"
 #include "lib.h"
 
-uint8_t task_stack[MAX_TASK][STACK_SIZE];
-struct context ctx_os;
-struct context ctx_tasks[MAX_TASK];
-struct context *ctx_now;
+// uint8_t task_stack[MAX_TASK][STACK_SIZE];
+// struct context ctx_os;
+// struct context ctx_tasks[MAX_TASK];
+// struct context *ctx_now;
 int taskTop = 0; // total number of task
 
 // create a new task
