@@ -26,8 +26,8 @@ void os_start()
 {
 	uart_init();
 	page_init();
+	user_init();
 	lib_puts("OS start\n");
-	//user_init();
 	//trap_init();
 	//plic_init();
 	//virtio_disk_init();
@@ -38,17 +38,15 @@ int os_main(void)
 {
 	os_start();
 	//disk_read();
-	page_test();
+	//page_test();
 	int current_task = 0;
 	while (1)
 	{
-		/*
 		lib_puts("OS: Activate next task\n");
 		task_go(current_task);
 		lib_puts("OS: Back to OS\n");
 		current_task = (current_task + 1) % taskTop; // Round Robin Scheduling
 		lib_puts("\n");
-		*/
 	}
 	return 0;
 }

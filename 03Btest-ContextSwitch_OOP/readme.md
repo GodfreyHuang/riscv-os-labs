@@ -20,6 +20,7 @@ struct rv
 ```  
   
 There is a question that I cannot let task0_stack set into the struct rv. Qemu cannot excecute, which is confuse me a long time.  
-Perhaps that memory space need malloc to set, so I decide using the memalloc example to do the lab.  
+Perhaps that memory space need malloc to set, so I decide using the memalloc example to do the lab. 
+memalloc example reference: https://github.com/cccriscv/mini-riscv-os/tree/master/09-MemoryAllocator  
   
 This lab is still in progress.  
