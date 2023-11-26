@@ -6,7 +6,7 @@ SOURCE = src/
 FILES = \
 $(SOURCE)boot.s \
 $(SOURCE)lib.c \
-$(SOURCE)swtch.s \
+$(SOURCE)switch.s \
 $(SOURCE)main.c
 
 OUT = os.elf

@@ -5,8 +5,10 @@ SOURCE = src/
 
 FILES = \
 $(SOURCE)boot.s \
+$(SOURCE)sys.s \
+$(SOURCE)switch.s \
 $(SOURCE)lib.c \
-$(SOURCE)swtch.s \
+$(SOURCE)timer.c \
 $(SOURCE)main.c
 
 OUT = os.elf
