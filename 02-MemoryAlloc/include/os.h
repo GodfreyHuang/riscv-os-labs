@@ -12,7 +12,6 @@ extern void page_init();
 extern void page_test();
 
 // main function
-extern void uart_init();
 extern int main(int argc, char *argv[]);
 
 #endif

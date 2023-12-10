@@ -16,7 +16,7 @@ _start:
     bnez a0, park                   # if we're not on the hart 0
                                     # we park the hart
 
-    j    main                       # jump to c
+    j    os_main                       # jump to c
 
 park:
     wfi
