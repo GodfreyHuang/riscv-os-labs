@@ -1,11 +1,16 @@
 CC = riscv64-unknown-elf-gcc
-CFLAG= -march=rv32i -mabi=ilp32 -T
+CFLAG= -march=rv32ima_zicsr -mabi=ilp32 -T
 BUILD = -I./include -nostdlib -fno-builtin
 SOURCE = src/
 
 FILES = \
 $(SOURCE)boot.s \
+$(SOURCE)sys.s \
+$(SOURCE)switch.s \
 $(SOURCE)lib.c \
+$(SOURCE)timer.c \
+$(SOURCE)task.c \
+$(SOURCE)user.c \
 $(SOURCE)main.c
 
 OUT = os.elf
@@ -18,7 +23,9 @@ DIR = ./bin/
 CHECKDIR := $(shell if ! $(DIR); \
 			then mkdir -p $(DIR); fi)
 
-all: $(FILES) qemu
+all: $(OUT) qemu
+
+$(OUT): $(FILES)
 	$(CHECKDIR)$(CC) $(CFLAG) $(LDS) \
 	-o $(DIR)$(OUT) $(BUILD) $(FILES)
 
