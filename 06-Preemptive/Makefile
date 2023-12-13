@@ -10,6 +10,7 @@ $(SOURCE)switch.s \
 $(SOURCE)lib.c \
 $(SOURCE)timer.c \
 $(SOURCE)task.c \
+$(SOURCE)trap.c \
 $(SOURCE)user.c \
 $(SOURCE)main.c
 

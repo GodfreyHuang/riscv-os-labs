@@ -52,4 +52,23 @@ sys_switch:
         ret          # pc=ra; swtch to new task (new->ra)
 
 
-        
+.globl trap_vector
+# trap vector 的記憶體地址必須以 4-byte 進行對齊
+.align 4
+trap_vector:
+        # 儲存 context (暫存器)
+        csrrw   t6, mscratch, t6
+        ctx_save t6
+        csrw    mscratch, t6
+        # 呼叫 trap.c 的 trap 處理程式
+        csrr    a0, mepc
+        csrr    a1, mcause
+        call    trap_handler
+
+        # trap 處理程式會回傳 a0 的記憶體位置
+        csrw    mepc, a0
+
+        #處理完成後將 context 載回
+        csrr    t6, mscratch
+        ctx_load  t6
+        mret

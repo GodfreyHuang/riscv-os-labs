@@ -20,4 +20,7 @@ extern void user_init();
 extern void os_kernel();
 extern void os_start();
 
+//trap
+extern void trap_init(void);
+
 #endif

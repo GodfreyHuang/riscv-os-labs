@@ -9,6 +9,7 @@ void os_kernel()
 void os_start()
 {
     user_init();
+    trap_init();
     timer_init();
 }
 
